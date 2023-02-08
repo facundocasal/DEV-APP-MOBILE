@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-import ShopNavigator from './navigation/shopNavigator';
+import BottomTypeNavigation from "./navigation/BottomTypeNavigation"
+import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from "expo-font"
 
@@ -13,7 +14,9 @@ export default function App() {
   if(!fontsLoaded) null
   
   return (
-    <ShopNavigator/>
+    <NavigationContainer>
+      <BottomTypeNavigation/>
+    </NavigationContainer>
   );
 }
 

@@ -1,8 +1,10 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
+import React, { useEffect } from 'react'
 
-import React from 'react'
-
-const DetailsScreens = ({ navigation }) => {
+const DetailsScreens = ({ navigation, route }) => {
+  useEffect(()=>{
+    console.log(route.params)
+  }, [])
   return (
     <View style={styles.constainer}>
       <Text>detailsScreens</Text>
