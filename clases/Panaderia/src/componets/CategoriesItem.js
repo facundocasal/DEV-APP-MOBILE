@@ -16,7 +16,7 @@ const CategoriesItem = ({ item, onSlected }) => {
           <Image
             style={styles.image}
             source={{
-              url: item.img,
+              uri: item.img,
             }}
           />
         </View>
@@ -30,7 +30,7 @@ export default CategoriesItem;
 const styles = StyleSheet.create({
   containerItem: {
     flex: 1,
-    width: "100%",
+    width: 300,
     margin: 20,
     borderRadius: 10,
     shadowColor: "black",

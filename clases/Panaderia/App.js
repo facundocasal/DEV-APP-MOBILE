@@ -1,23 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
 
-import BottomTypeNavigation from "./navigation/BottomTypeNavigation"
+import BottomTypeNavigation from "./navigation/BottomTypeNavigation";
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from 'expo-status-bar';
-import { useFonts } from "expo-font"
+// provider de redux 
+import { Provider } from "react-redux";
+import { StatusBar } from "expo-status-bar";
+// store de redux
+import store from "./src/store";
+import { useFonts } from "expo-font";
 
 export default function App() {
-  
   const [fontsLoaded] = useFonts({
-    unboundedRegular : require("./assets/fonts/Unbounded-Regular.ttf")
-  })
+    unboundedRegular: require("./assets/fonts/Unbounded-Regular.ttf"),
+  });
 
-  if(!fontsLoaded) null
-  
+  if (!fontsLoaded) null;
+
   return (
-    <NavigationContainer>
-      <BottomTypeNavigation/>
-    </NavigationContainer>
+    <Provider store={store} >
+      <NavigationContainer>
+        <BottomTypeNavigation />
+      </NavigationContainer>
+    </Provider>
   );
 }
-
-

@@ -33,7 +33,7 @@ export const products = [
   },
   {
     id: 5,
-    category: 2,
+    category: 4,
     name: "Dona de chocholate",
     description: "Dona cubierta de chocolate",
     wight: "300gr",

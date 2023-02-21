@@ -1,6 +1,5 @@
 import CategoriesScreens from "../src/screens/CategoriesScreens";
 import DetailsScreens from "../src/screens/DetailsScreens";
-import { NavigationContainer } from "@react-navigation/native";
 import ProductsScreens from "../src/screens/ProductsScreens";
 import { colors } from "../src/constants/colors";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -15,8 +14,8 @@ export default ShopNavigator = () => {
         screenOptions={{
           // estilos del headers de la navegacion
           headerShadowVisible : false,
-          headerStyle: { backgroundColor: colors.bg },
-          headerTintColor: colors.secondary,
+          // headerStyle: { backgroundColor: colors.bg },
+          // headerTintColor: colors.secondary,
           headerTitleStyle: {
             fontWeight: "bold",
           },

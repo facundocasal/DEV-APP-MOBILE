@@ -1,14 +1,21 @@
 import { Button, FlatList, StyleSheet, Text, View } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 
-import CategoriesItem from "../componets/categoriesItem";
+import CategoriesItem from "../componets/CategoriesItem.js";
 import React from "react";
-import {categories} from "../data/categories"
+import { selectedCategory } from "../store/actions/category.action.js";
 
 const CategoriesScreens = ({ navigation }) => {
+  const categories = useSelector((state) => state.categories.categories);
+  const dispatch = useDispatch();
+
   const handleSelectedCategory = (item) => {
+    dispatch(selectedCategory(item.id))
     navigation.navigate("Products", {
-      categoryId: item.id,
+      // esta linea ya no seria necesaria por que podemos acceder al id de la categoria por medio de redux 
+      //categoryId: item.id,
       title: item.title,
+      item: item,
     });
   };
   // es con () por que buscamos que retorne un componente
@@ -19,17 +26,10 @@ const CategoriesScreens = ({ navigation }) => {
   );
   return (
     <View style={styles.constainer}>
-        <FlatList
-          data={categories}
-          renderItem={renderCategories}
-          keyExtractor={(item) => item.id}
-        />
-
-      <Button
-        title="Go to Products"
-        onPress={() => {
-          navigation.navigate("Products");
-        }}
+      <FlatList
+        data={categories}
+        renderItem={renderCategories}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
