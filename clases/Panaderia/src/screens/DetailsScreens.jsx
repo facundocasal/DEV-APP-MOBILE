@@ -9,13 +9,13 @@ const DetailsScreens = ({ navigation, route }) => {
 
   
   const bread = useSelector((state) => state.products.selected);
+
   
   const handleAddItem = () =>{
     // pasamos bread por que va a tener los datos guardados en el estado del item 
     dispatch(addItem(bread))
   }
   useEffect(() => {
-    console.log(route.params);
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-export const products = [
+export const PRODUCTS = [
   {
     id: 1,
     category: 1,
@@ -16,7 +16,7 @@ export const products = [
     price: 200,
   },
   {
-    id: 1,
+    id: 3,
     category: 1,
     name: "Pan Hamburguesa",
     description: "Textura suave , decorado con semillas de sesamo tostadas ",

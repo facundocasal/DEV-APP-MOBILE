@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
 
-import BottomTypeNavigation from "./navigation/BottomTypeNavigation";
+import MainNavigation from "./navigation";
 import { NavigationContainer } from "@react-navigation/native";
-// provider de redux 
+// provider de redux
 import { Provider } from "react-redux";
 import { StatusBar } from "expo-status-bar";
 // store de redux
@@ -17,9 +17,9 @@ export default function App() {
   if (!fontsLoaded) null;
 
   return (
-    <Provider store={store} >
+    <Provider store={store}>
       <NavigationContainer>
-        <BottomTypeNavigation />
+        <MainNavigation />
       </NavigationContainer>
     </Provider>
   );

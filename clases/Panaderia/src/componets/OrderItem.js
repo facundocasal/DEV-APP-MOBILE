@@ -9,14 +9,16 @@ const formatDay = (time) => {
 };
 
 const OrderItem = ({ item, onDelete }) => {
+  console.log(item.total)
   return (
     <View style={styles.order}>
       <View>
         <Text style={styles.date}>{formatDay(item.date)}</Text>
-        <Text style={styles.total}>Total</Text>
+        <Text style={styles.total}>Total:</Text>
+        <Text> ${item.total} -</Text>
       </View>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onDelete}>
           <Ionicons name="md-trash" color={"red"} size={22} />
         </TouchableOpacity>
       </View>

@@ -1,6 +1,6 @@
 import { colors } from "../constants/colors";
 
-export const categories = [
+export const CATEGORIES = [
     {
         id: 1,
         title : "Harinas puras",
